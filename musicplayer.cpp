@@ -117,6 +117,10 @@ void MusicPlayer::createWidgets()
     openButton->setFixedSize(playButton->sizeHint());
     connect(openButton, &QAbstractButton::clicked, this, &MusicPlayer::openFile);
 
+    volumeButton = new VolumeButton(this);
+    volumeButton->setVolume(mediaPlayer.volume());
+    connect(volumeButton, &VolumeButton::volumeChanged, &mediaPlayer, &QMediaPlayer::setVolume);
+
     positionSlider = new QSlider(Qt::Horizontal, this);
     positionSlider->setEnabled(false);
     connect(positionSlider, &QAbstractSlider::valueChanged, this, &MusicPlayer::setPosition);
@@ -131,6 +135,7 @@ void MusicPlayer::createWidgets()
     controlLayout->addWidget(playButton);
     controlLayout->addWidget(positionSlider);
     controlLayout->addWidget(positionLabel);
+    controlLayout->addWidget(volumeButton);
 
     QBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(infoLabel);
