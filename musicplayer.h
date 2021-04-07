@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QMediaPlayer>
 
+class VolumeButton;
 
 QT_FORWARD_DECLARE_CLASS(QLabel)
 QT_FORWARD_DECLARE_CLASS(QSlider)
@@ -32,6 +33,7 @@ private:
 
     QMediaPlayer mediaPlayer;
     QAbstractButton *playButton = nullptr;
+    VolumeButton *volumeButton = nullptr;
     QSlider *positionSlider = nullptr;
     QLabel *positionLabel = nullptr;
     QLabel *infoLabel = nullptr;
