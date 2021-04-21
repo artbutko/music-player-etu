@@ -1,8 +1,10 @@
 <RCC>
-    <qresource prefix="/">
-        <file>images/volume.ico</file>
-        <file>images/pause.ico</file>
-        <file>images/vol_settings.ico</file>
-        <file>images/play.ico</file>
+    <qresource prefix="/icon">
+        <file>mp3player/icon/next.png</file>
+        <file>mp3player/icon/pause.png</file>
+        <file>mp3player/icon/play.png</file>
+        <file>mp3player/icon/pre.png</file>
+        <file>mp3player/icon/search.png</file>
+        <file>mp3player/icon/stop.png</file>
     </qresource>
 </RCC>

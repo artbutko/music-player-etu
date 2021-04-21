@@ -1,14 +1,11 @@
-#include "musicplayer.h"
-
+#include "mainwindow.h"
 #include <QApplication>
-#include <QDesktopWidget>
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    QGuiApplication::setApplicationDisplayName("MusicPlayerETU");
-    MusicPlayer player;
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
-    player.show();
-    return app.exec();
+    return a.exec();
 }
