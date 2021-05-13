@@ -4,7 +4,6 @@
 #include "playlist.h"
 #include <QMessageBox>
 #include <QMovie>
-#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -47,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->prebutton->setIcon(QIcon(pix4));  ui->prebutton->setStyleSheet(style);  ui->prebutton->setToolTip("Previous Song");
     ui->shuffle->setIcon(QIcon(pix6));    ui->shuffle->setStyleSheet(style);    ui->shuffle->setToolTip("Shuffle songs");
     ui->mute->setIcon(QIcon(pix7));       ui->mute->setStyleSheet(style);       ui->mute->setToolTip("Mute Song"); ui->mute->setText(".");
-    ui->art->setIcon(pix8);
+    ui->art->setPixmap(pix8);
 
 
 }
@@ -100,7 +99,7 @@ void MainWindow::on_actionOpen_triggered()
 
                    default:
                        QPixmap pix8(":/icon/icon/equalizer.gif");
-                       ui->art->setIcon(pix8);
+                       ui->art->setPixmap(pix8);
                        break;
                    }
                   // QString albumart = player->metaData("CoverArtImage").type();
@@ -333,10 +332,4 @@ void MainWindow::on_actionMute_triggered()
         ui->mute->setIcon(QIcon(pix8));
         ui->status->setText("Unmuted...");
     }
-}
-
-void MainWindow::on_art_clicked()
-{
-    QString program = "./spectrum.exe";
-    QProcess::execute(program);
 }
