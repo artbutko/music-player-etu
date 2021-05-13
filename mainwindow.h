@@ -72,6 +72,8 @@ private slots:
 
     void on_actionMute_triggered();
 
+    void on_art_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *player;
